@@ -35,3 +35,7 @@ copleykj:livestamp
 udondan:bulk-collection-update
 
 ongoworks:pdf
+
+jspdf:core
+
+new3rs:html2canvas

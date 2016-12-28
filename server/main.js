@@ -23,14 +23,14 @@ Meteor.startup(() => {
         nameFr: 'Plat Principal',
         nameDe: 'Hauptgericht',
         nameEn: 'Second Dish',
-        categoryOrder: 2
+        categoryOrder: 3
       },
       {
         nameIt: 'Dolci',
         nameFr: 'Confiserie',
         nameDe: 'Süßwaren',
         nameEn: 'Dessert',
-        categoryOrder: 2
+        categoryOrder: 4
       },
     ];
 

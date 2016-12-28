@@ -36,6 +36,7 @@ http@1.1.8
 id-map@1.0.9
 insecure@1.0.7
 jquery@1.11.10
+jspdf:core@1.1.135
 launch-screen@1.0.12
 livedata@1.0.18
 logging@1.1.16
@@ -56,6 +57,7 @@ momentjs:moment@2.17.1
 mongo@1.1.14
 mongo-id@1.0.6
 mrt:bootstrap-3@0.3.8
+new3rs:html2canvas@0.0.5
 npm-mongo@2.2.11_2
 observe-sequence@1.0.14
 ongoworks:pdf@1.1.1
