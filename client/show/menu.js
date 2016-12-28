@@ -1,6 +1,6 @@
 Template.menu.helpers({
   categories: function(){
-    return Category.find();
+    return Category.find({}, {sort: {categoryOrder: 1}});
   },
   recipes: function(){
     var cId = Template.parentData(0)._id
