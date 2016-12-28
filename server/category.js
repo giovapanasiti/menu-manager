@@ -12,6 +12,9 @@ Meteor.methods({
       console.log('dal metodo server: inserito');
     }
   },
+  'Category.remove':function(id){
+    return Category.remove({_id: id});
+  },
   category:  function(){
     return Category.find({});
   },
