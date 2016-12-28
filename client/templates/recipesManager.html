@@ -1,32 +1,34 @@
 <template name="recipeManager">
+
+  <h2>Aggiungi Piatto</h2>
   <div class="form-group">
     <form id="addRecipeForm">
 <div class="form-group">
-    <label class="control-label">Nome Piatto
+    <label class="control-label">Nome
       <span class="label label-warning">Italiano</span>
     </label>
     <input type="text" class="form-control input-sm" id="recipeNameIt">
 </div>
 <div class="form-group">
-    <label class="control-label">Nome Piatto
+    <label class="control-label">Nome
       <span class="label label-warning">Inglese</span>
     </label>
     <input type="text" class="form-control input-sm" id="recipeNameEn">
 </div>
 <div class="form-group">
-    <label class="control-label">Nome Piatto
+    <label class="control-label">Nome
       <span class="label label-warning">Francese</span>
     </label>
     <input type="text" class="form-control input-sm" id="recipeNameFr">
 </div>
 <div class="form-group">
-    <label class="control-label">Nome Piatto
+    <label class="control-label">Nome
       <span class="label label-warning">Tedesco</span>
     </label>
     <input type="text" class="form-control input-sm" id="recipeNameDe">
 </div>
     <div class="form-group">
-      <label class="control-label">Category</label>
+      <label class="control-label">Categoria</label>
       <!-- <input id="category" type="text" class="form-control input-sm"> -->
       <select name="category" id="category" class="form-control">
         {{#each categories}}
