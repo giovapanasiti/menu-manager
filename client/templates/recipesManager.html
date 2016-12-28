@@ -1,52 +1,58 @@
 <template name="recipeManager">
 
-  <h2>Aggiungi Piatto</h2>
-  <div class="form-group">
-    <form id="addRecipeForm">
-<div class="form-group">
-    <label class="control-label">Nome
-      <span class="label label-warning">Italiano</span>
-    </label>
-    <input type="text" class="form-control input-sm" id="recipeNameIt">
-</div>
-<div class="form-group">
-    <label class="control-label">Nome
-      <span class="label label-warning">Inglese</span>
-    </label>
-    <input type="text" class="form-control input-sm" id="recipeNameEn">
-</div>
-<div class="form-group">
-    <label class="control-label">Nome
-      <span class="label label-warning">Francese</span>
-    </label>
-    <input type="text" class="form-control input-sm" id="recipeNameFr">
-</div>
-<div class="form-group">
-    <label class="control-label">Nome
-      <span class="label label-warning">Tedesco</span>
-    </label>
-    <input type="text" class="form-control input-sm" id="recipeNameDe">
-</div>
+  <h2 class="btn btn-primary btn-large" role="button" data-toggle="collapse" href="#collapsePiatti" aria-expanded="false" aria-controls="collapsePiatti">Aggiungi Piatto</h2>
+  <div class="collapse" id="collapsePiatti">
+    <div class="well">
+      <div class="form-group">
+        <form id="addRecipeForm">
     <div class="form-group">
-      <label class="control-label">Categoria</label>
-      <!-- <input id="category" type="text" class="form-control input-sm"> -->
-      <select name="category" id="category" class="form-control">
-        {{#each categories}}
-          <option value="{{_id}}">{{nameIt}}</option>
-        {{/each}}
-      </select>
+        <label class="control-label">Nome
+          <span class="label label-warning">Italiano</span>
+        </label>
+        <input type="text" class="form-control input-sm" id="recipeNameIt">
     </div>
+    <div class="form-group">
+        <label class="control-label">Nome
+          <span class="label label-warning">Inglese</span>
+        </label>
+        <input type="text" class="form-control input-sm" id="recipeNameEn">
+    </div>
+    <div class="form-group">
+        <label class="control-label">Nome
+          <span class="label label-warning">Francese</span>
+        </label>
+        <input type="text" class="form-control input-sm" id="recipeNameFr">
+    </div>
+    <div class="form-group">
+        <label class="control-label">Nome
+          <span class="label label-warning">Tedesco</span>
+        </label>
+        <input type="text" class="form-control input-sm" id="recipeNameDe">
+    </div>
+        <div class="form-group">
+          <label class="control-label">Categoria</label>
+          <!-- <input id="category" type="text" class="form-control input-sm"> -->
+          <select name="category" id="category" class="form-control">
+            {{#each categories}}
+              <option value="{{_id}}">{{nameIt}}</option>
+            {{/each}}
+          </select>
+        </div>
 
-    <div class="control-group">
-      <label class="control-label"></label>
-      <div class="controls">
-        <button class="btn btn-info btn-md addRecipe">
-          <i class="fa fa-database">
-            Aggiungi Piatto
-          </i>
-        </button>
+        <div class="control-group">
+          <label class="control-label"></label>
+          <div class="controls">
+            <button class="btn btn-info btn-md addRecipe">
+              <i class="fa fa-database">
+                Aggiungi Piatto
+              </i>
+            </button>
+          </div>
+        </div>
+        </form>
       </div>
     </div>
-    </form>
   </div>
+
+
 </template>
