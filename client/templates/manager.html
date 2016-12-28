@@ -1,0 +1,42 @@
+<template name="manager">
+  <div class="row">
+    <div class="col-sm-6">
+      {{>recipeManager}}
+    </div>
+
+    <div class="col-sm-6">{{>category}}</div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <table class="table table-striped table-bordered table-responsive table-hover">
+        <thead>
+          <tr class="success">
+            <td>Nome It</td>
+            <td>Nome Fr</td>
+            <td>Nome De</td>
+            <td>Nome En</td>
+            <td>Category ID</td>
+            <td>Category</td>
+            <td>Remove</td>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each recipes}}
+        <tr>
+          <td>{{nameIt}}</td>
+          <td>{{nameFr}}</td>
+          <td>{{nameDe}}</td>
+          <td>{{nameEn}}</td>
+          <td>{{categoryId}}</td>
+          <td>{{}}</td>
+          <td><a href="#" class="removeRecipe"><i class="fa fa-trash alert-danger removeRecipe"></i></a></td>
+
+        </tr>
+        {{/each}}
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</template>
