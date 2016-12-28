@@ -3,7 +3,17 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <!-- Questo viene letto e sovrascrive il resto -->
   </head>
-  <div class="container" style="background: blue;" id="textarea">
+<div id="menu-completo">
+  <div class="container" style="width: 210mm ; height: 297mm; background: yellow;" id="menu1">
+    <div class="row">
+      <div class="col-sm-6">
+        uno
+      </div>
+      <div class="col-sm-6"></div>
+    </div>
+  </div>
+
+  <div class="container" style="width: 210mm ; height: 297mm; background: white;" id="menu2">
     <div class="row">
       <div class="col-md-12">
         {{#each categories _id}}
@@ -28,4 +38,5 @@
       </div>
     </div>
   </div>
+</div>
 </template>
