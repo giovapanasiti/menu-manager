@@ -17,8 +17,7 @@
             <td>Nome Fr</td>
             <td>Nome De</td>
             <td>Nome En</td>
-            <td>Category ID</td>
-            <td>Category</td>
+            <td>Categoria</td>
             <td>Remove</td>
           </tr>
         </thead>
@@ -29,8 +28,11 @@
           <td>{{nameFr}}</td>
           <td>{{nameDe}}</td>
           <td>{{nameEn}}</td>
-          <td>{{categoryId}}</td>
-          <td>{{category.nameIt}}</td>
+          {{#if category}}
+            <td>{{category.nameIt}}</td>
+          {{else}}
+            <td class="danger">Categoria è stata rimossa</td>
+          {{/if}}
           <td><a href="#" class="removeRecipe"><i class="fa fa-trash alert-danger removeRecipe"></i></a></td>
 
         </tr>
@@ -43,30 +45,59 @@
   <div class="row">
     <div class="col-md-12">
       <h1>Gestione Categorie</h1>
-      <table class="table table-striped table-bordered table-responsive table-hover">
-        <thead>
-          <tr class="success">
-            <td>Nome It</td>
-            <td>Nome Fr</td>
-            <td>Nome De</td>
-            <td>Nome En</td>
-            <td>Remove</td>
+      <button class="btn btn-danger btn-large" data-toggle="modal" data-target="#CancCat">Cancella Categorie</button>
+
+      <!-- Modal -->
+<div id="CancCat" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Cancella Categorie</h4>
+      </div>
+      <div class="modal-body">
+        <div class="alert alert-danger">
+          Tutti i piatti delle categorie cancellate non saranno più accessibili nella selezione del menu.
+          <br><br>
+          Tutte le categorie cancellate non possono essere ripristinate
+        </div>
+
+
+        <table class="table table-striped table-bordered table-responsive table-hover">
+          <thead>
+            <tr class="success">
+              <td>Nome It</td>
+              <td>Nome Fr</td>
+              <td>Nome De</td>
+              <td>Nome En</td>
+              <td>Remove</td>
+            </tr>
+          </thead>
+          <tbody>
+            {{#each categories}}
+          <tr>
+            <td>{{nameIt}}</td>
+            <td>{{nameFr}}</td>
+            <td>{{nameDe}}</td>
+            <td>{{nameEn}}</td>
+
+            <td><a href="#" class="removeCategory"><i class="fa fa-trash alert-danger removeRecipe"></i></a></td>
+
           </tr>
-        </thead>
-        <tbody>
-          {{#each categories}}
-        <tr>
-          <td>{{nameIt}}</td>
-          <td>{{nameFr}}</td>
-          <td>{{nameDe}}</td>
-          <td>{{nameEn}}</td>
+          {{/each}}
+          </tbody>
+        </table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
 
-          <td><a href="#" class="removeCategory"><i class="fa fa-trash alert-danger removeRecipe"></i></a></td>
+  </div>
+</div>
 
-        </tr>
-        {{/each}}
-        </tbody>
-      </table>
     </div>
   </div>
 

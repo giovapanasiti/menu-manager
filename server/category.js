@@ -15,7 +15,7 @@ Meteor.methods({
   'Category.remove':function(id){
     return Category.remove({_id: id});
   },
-  category:  function(){
+  category: function(){
     return Category.find({});
   },
 });

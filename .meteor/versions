@@ -39,6 +39,7 @@ launch-screen@1.0.12
 livedata@1.0.18
 logging@1.1.16
 matb33:collection-hooks@0.8.4
+matdutour:popup-confirm@0.2.1
 meteor@1.6.0
 meteor-base@1.0.4
 meteorhacks:flow-layout@1.4.2
