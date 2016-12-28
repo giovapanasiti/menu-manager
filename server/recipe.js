@@ -4,5 +4,8 @@ Meteor.methods({
   },
   'Recipe.remove':function(id){
     return Recipe.remove({_id: id});
-  }
+  },
+  'Recipe.update': function(recipe){
+    return Recipe.update(recipe);
+  },
 });

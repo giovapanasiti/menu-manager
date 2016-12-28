@@ -1,5 +1,9 @@
 <template name="composer">
-
+  <div class="panel-heading">
+    <h2>
+      Menu del giorno: {{time}}
+    </h2>
+  </div>
   {{#each categories _id}}
     <div class="row">
 
@@ -7,6 +11,7 @@
         <h1 class="heading">
           {{nameIt}}
         </h1>
+
         <table class="table table-striped table-bordered table-responsive table-hover">
           <thead>
             <tr class="info">
@@ -14,19 +19,22 @@
               <td>Nome Fr</td>
               <td>Nome De</td>
               <td>Nome En</td>
-              <td>Inserisci</td>
+
+              <td>Ultima Volta</td>
             </tr>
           </thead>
           <tbody>
             {{#each recipes}}
-          <tr>
+          <tr class="{{#if isActive}}success{{/if}}">
             <td>{{nameIt}}</td>
             <td>{{nameFr}}</td>
             <td>{{nameDe}}</td>
             <td>{{nameEn}}</td>
+            <!-- <td><input type="checkbox" checked={{isActive}} value="{{isActive}}" class="checkbox control setActive"></td> -->
 
-            <td><input type="checkbox" checked={{isActive}} class="checkbox control setActive"></td>
-
+            <td>{{livestamp lastUpdate}}</td>
+            <td class="text-center"><a href="#" class="isActiveTrue success"><i class="fa fa-plus-circle icon-large"></i></a></td>
+            <td class="text-center"><a href="#" class="isActiveFalse danger"><i class="fa fa-minus-circle icon-large"></i></a></td>
           </tr>
           {{/each}}
           </tbody>

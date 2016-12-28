@@ -5,15 +5,33 @@ Template.composer.helpers({
   recipes: function(){
     var cId = Template.parentData(0)._id
     return Recipe.find({"categoryId": cId});
+  },
+  timeAgo: function(date){
+    var DataOggi = new Date();
+    console.log(DataOggi, this.lastUpdate)
+    return DataOggi - this.lastUpdate ;
+  },
+  time: function(time){
+    return moment(time).format("DD/MM/YYYY");
   }
 });
 
 Template.composer.events({
-  'click .setActive'() {
-    // Set the checked property to the opposite of its current value
+
+  'click .isActiveTrue'(){
     Recipe.update(this._id, {
-      $set: { isActive: ! this.checked },
-      
-    });
+      $set: {
+        isActive: true,
+        lastUpdate: new Date()
+      }
+    })
   },
+  'click .isActiveFalse'(){
+    Recipe.update(this._id, {
+      $set: {
+        isActive: false
+      }
+    })
+  }
+
 });
