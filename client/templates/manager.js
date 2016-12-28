@@ -12,3 +12,13 @@ Template.manager.events({
     Meteor.call('Recipe.remove', this._id);
   }
 });
+
+
+Template.category.helpers({
+  categories: function(){
+    return Category.find();
+  },
+  recipes: function(){
+    return Recipe.find();
+  }
+});

@@ -27,5 +27,8 @@ Template.recipeManager.helpers({
   category:function(){
     var categoryId = Category.findOne({name:nameIt})._id;
     return Category.findOne(this.categoryId);
+  },
+  recipes: function(){
+    return Recipe.find();
   }
 })
