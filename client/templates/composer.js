@@ -7,3 +7,13 @@ Template.composer.helpers({
     return Recipe.find({"categoryId": cId});
   }
 });
+
+Template.composer.events({
+  'click .setActive'() {
+    // Set the checked property to the opposite of its current value
+    Recipe.update(this._id, {
+      $set: { isActive: ! this.checked },
+      
+    });
+  },
+});

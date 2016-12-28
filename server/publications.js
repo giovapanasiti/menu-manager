@@ -27,11 +27,19 @@ Category.allow({
   'insert': function( doc){
     return true;
     // If a userId is not present it will return a false statmente not allowing the client to inserti
+  },
+  'update': function( doc){
+    return true;
+    // If a userId is not present it will return a false statmente not allowing the client to inserti
   }
 });
 
 Recipe.allow({
   'insert': function( doc){
+    return true;
+    // If a userId is not present it will return a false statmente not allowing the client to inserti
+  },
+  'update': function( doc){
     return true;
     // If a userId is not present it will return a false statmente not allowing the client to inserti
   }
