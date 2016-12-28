@@ -1,9 +1,62 @@
-<template name="menu">
-  <div class="container">
+<template name="menu" >
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  </head>
+  <div class="container" style="background: blue;">
     <div class="row">
       <div class="col-md-12">
+        {{#each categories _id}}
+          {{#each recipes }}
 
-        cazzo
+          <div class="row">
+            <div class="col-md-6 text-center">
+              <h5>{{category.nameIt}}</h5>
+              <h3>{{nameIt}}</h3>
+            </div>
+            <div class="col-md-6"></div>
+          </div>
+          <div class="row">
+            <div class="col-md-6"></div>
+            <div class="col-md-6"></div>
+          </div>
+
+          {{/each}}
+        {{/each}}
+
+
+
+          <!-- <div class="row">
+
+            <div class="col-md-12">
+              <table class="table table-striped table-bordered table-responsive table-hover">
+                <thead>
+                  <tr class="info">
+                    <td>Nome It</td>
+                    <td>Nome Fr</td>
+                    <td>Nome De</td>
+                    <td>Nome En</td>
+
+                    <td>Ultima Volta</td>
+                  </tr>
+                </thead>
+                <tbody>
+                  {{#each recipes}}
+                <tr class="{{#if isActive}}success{{/if}}">
+                  <td>{{nameIt}}</td>
+                  <td>{{nameFr}}</td>
+                  <td>{{nameDe}}</td>
+                  <td>{{nameEn}}</td>
+
+                  <td>{{livestamp lastUpdate}}</td>
+                  <td class="text-center"><a href="#" class="isActiveTrue success"><i class="fa fa-plus-circle icon-large"></i></a></td>
+                  <td class="text-center"><a href="#" class="isActiveFalse danger"><i class="fa fa-minus-circle icon-large"></i></a></td>
+                </tr>
+                {{/each}}
+                </tbody>
+              </table>
+            </div>
+          </div> -->
+
       </div>
     </div>
   </div>

@@ -7,10 +7,11 @@ Template.category.events({
     category.nameDe = template.find('#categoryNameDe').value;
     category.nameFr = template.find('#categoryNameFr').value;
     category.created_at = new Date();
+    category.categoryOrder = template.find('#categoryOrder').value;
 
 
     Meteor.call('addCategory', category, function(){
-      
+
       $('#addCategoryForm')[0].reset();
     });
     // addCategory method is defined in server/methods/category.js

@@ -4,7 +4,8 @@ Template.menu.helpers({
   },
   recipes: function(){
     var cId = Template.parentData(0)._id
-    return Recipe.find({"categoryId": cId});
+    return Recipe.find({"categoryId": cId, "isActive": true});
+    // This allow in the menu only those recipes with "isActive = true"
   },
   timeAgo: function(date){
     var DataOggi = new Date();
