@@ -7,6 +7,11 @@ FlowRouter.route(['/', '/home'], {
 });
 
 FlowRouter.route(['/composer'], {
+  subscriptions:function(params){
+    this.register('categoriesList', Meteor.subscribe('category'));
+    this.register('recipesList', Meteor.subscribe('recipes'));
+    this.register('catproducts', Meteor.subscribe('categoryRecipes', params.categoryName));
+  },
   action: function(){
     FlowLayout.render('layout',{
       main: 'composer',
@@ -21,7 +26,7 @@ FlowRouter.route(['/manager'], {
     this.register('recipesList', Meteor.subscribe('recipes'));
 
 
-    this.register('catproducts', Meteor.subscribe('categoryRecipes', params.nameIt));
+    this.register('catproducts', Meteor.subscribe('categoryRecipes', params.categoryName));
 
   },
   action: function(){

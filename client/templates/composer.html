@@ -1,3 +1,37 @@
 <template name="composer">
-  
+
+  {{#each categories _id}}
+    <div class="row">
+
+      <div class="col-md-12">
+        <h1 class="heading">
+          {{nameIt}}
+        </h1>
+        <table class="table table-striped table-bordered table-responsive table-hover">
+          <thead>
+            <tr class="warning">
+              <td>Nome It</td>
+              <td>Nome Fr</td>
+              <td>Nome De</td>
+              <td>Nome En</td>
+              <td>Remove</td>
+            </tr>
+          </thead>
+          <tbody>
+            {{#each recipes}}
+          <tr>
+            <td>{{nameIt}}</td>
+            <td>{{nameFr}}</td>
+            <td>{{nameDe}}</td>
+            <td>{{nameEn}}</td>
+
+            <td><a href="#" class="removeCategory"><i class="fa fa-trash alert-danger removeRecipe"></i></a></td>
+
+          </tr>
+          {{/each}}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  {{/each}}
 </template>
