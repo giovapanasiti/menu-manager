@@ -35,3 +35,16 @@ FlowRouter.route(['/manager'], {
     });
   }
 });
+
+FlowRouter.route('/menu', {
+  subscriptions:function(params){
+    this.register('categoriesList', Meteor.subscribe('category'));
+    this.register('recipesList', Meteor.subscribe('recipes'));
+    this.register('catproducts', Meteor.subscribe('categoryRecipes', params.categoryName));
+  },
+  action: function(){
+    FlowLayout.render('print',{
+      main: 'menu',
+    });
+  }
+});

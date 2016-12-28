@@ -32,6 +32,16 @@ Template.composer.events({
         isActive: false
       }
     })
+  },
+  'click #generateMenu'(){
+    Blaze.saveAsPDF(Template.menu, {
+      filename: "Menu.pdf", // optional, default is "document.pdf"
+      data: Template.menu, // optional, render the template with this data context
+      x: 0, // optional, left starting position on resulting PDF, default is 4 units
+      y: 0, // optional, top starting position on resulting PDF, default is 4 units
+      unit: "cm", // optional, unit for coordinates, one of "pt", "mm" (default), "cm", or "in"
+      format: "a4" // optional, see Page Formats, default is "a4"
+    });
   }
 
 });
