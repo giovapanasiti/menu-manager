@@ -45,8 +45,10 @@ FlowRouter.route('/menu', {
   action: function(){
     FlowLayout.render('print',{
       main: 'menu',
-    });}
-
-
-
+    });
+  }
 });
+
+// FlowRouter.route('/menu-d', {
+//
+// });

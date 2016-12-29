@@ -7,7 +7,7 @@
   "dependencies": {
     "babel-runtime": "^6.18.0",
     "fs-path": "0.0.23",
-    "meteor-node-stubs": "~0.2.0",
+    "meteor-node-stubs": "^0.2.4",
     "phantomjs": "^2.1.7",
     "wkhtmltopdf": "^0.3.3"
   }

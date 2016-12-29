@@ -48,7 +48,7 @@ Meteor.methods({
       console.log('######################################### from server method 4')
         console.log('worked!', fs.readFileSync('out.pdf').toString());
         var content= fs.readFileSync('out.pdf')
-        fsPath.writeFile('../../../../../PDF/out.pdf', content, function(err){
+        fsPath.writeFile('../../../../../public/out.pdf', content, function(err){
           if(err) {
             throw err;
           } else {
@@ -62,5 +62,20 @@ Meteor.methods({
     // Save it on myApp/public/pdf folder (or any place) with the Fibered sync methode:
     // doc.writeSync(process.env.PWD + '/public/pdf/PDFKitExample.pdf');
     // doc.writeSync(process.env.PWD + '/public/menu.pdf');
-  }
-})
+  },
+  'look.pdf':function(){
+  	var fstream = Npm.require('fs');
+  	filename = 'public/out.pdf';
+  	response = this.response;
+  	filestream;
+    console.log('######################################### from LOOK server')
+    console.log(filestream)
+
+  	if (!fstream.existsSync(filename)) {
+  		console.log('router image not found', filename);
+  		return [404];
+  	}
+
+  	return [200, fstream.readFileSync(filename)];
+    }
+});

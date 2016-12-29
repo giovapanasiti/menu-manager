@@ -16,3 +16,12 @@ Template.menu.helpers({
     return moment(time).format("DD/MM/YYYY");
   }
 });
+
+Template.menu.helpers({
+  'click #downloadMenu'(){
+
+      Meteor.call('look.pdf', function(){
+        console.log('pdf method triggered to look');
+      });
+    }
+})

@@ -38,7 +38,7 @@ Template.composer.events({
   },
   'click #generateMenu'(){
 
-    // FlowRouter.go('/menu');
+    FlowRouter.go('/menu');
 
       Meteor.call('render.pdf', document.body, function(){
         console.log('pdf method triggered');
