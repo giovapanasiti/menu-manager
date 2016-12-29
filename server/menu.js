@@ -46,7 +46,7 @@ Meteor.methods({
     console.log('######################################### from server method 3')
     wkhtmltopdf(html, function(code, signal) {
       console.log('######################################### from server method 4')
-        console.log('worked!', fs.readFileSync('out.pdf').toString());
+        console.log('worked!');
         var content= fs.readFileSync('out.pdf')
         fsPath.writeFile('../../../../../public/out.pdf', content, function(err){
           if(err) {
