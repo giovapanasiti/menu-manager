@@ -35,7 +35,12 @@ copleykj:livestamp
 udondan:bulk-collection-update
 
 ongoworks:pdf
-
 jspdf:core
-
 new3rs:html2canvas
+pascoual:pdfkit
+jgdovin:html-pdf
+dfischer:phantomjs
+dburles:spacebars-tohtml
+meteorhacks:ssr
+
+classcraft:meteor-wkhtmltopdf

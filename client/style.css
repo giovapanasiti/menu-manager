@@ -13,3 +13,28 @@ a.isActiveTrue{
 a.isActiveFalse {
   color: red;
 }
+
+
+.page {
+    size: 21cm 29.7cm;
+    margin: 30mm 45mm 30mm 45mm; /* change the margins as you want them to be. */
+}
+
+
+@media print {
+   body{
+     margin: 0;
+   }
+
+   html {
+     margin: 0;
+   }
+
+   .col-sm-6 {
+    width: 50%;
+  }
+
+  #menu-completo{
+    background: url('http://assets.barcroftmedia.com.s3-website-eu-west-1.amazonaws.com/assets/images/recent-images-11.jpg');
+  }
+}

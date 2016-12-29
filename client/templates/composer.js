@@ -1,6 +1,4 @@
-import '../plugins/_html2pdf.js';
-import '../plugins/html2canvas.js';
-import '../plugins/jspdf.min.js'
+
 
 
 Template.composer.helpers({
@@ -40,64 +38,76 @@ Template.composer.events({
   },
   'click #generateMenu'(){
 
-      FlowRouter.go('/menu');
-      setTimeout(function () {
+    // FlowRouter.go('/menu');
 
+      Meteor.call('render.pdf', document.body, function(){
+        console.log('pdf method triggered');
+      });
 
-        var pdf = new jsPDF('p', 'pt', 'a4');
-        console.log(pdf);
-        // var canvas = document.getElementById('textarea');
-        // console.log(canvas);
-        // canvas.width = 72 * 8.5;
-        // canvas.height = 72 * 11;
-        var testo = document.getElementById('menu-completo');
-        var pdfPart1 = document.getElementById('menu1');
-        var pdfPart2 = document.getElementById('menu2');
-        var pageHeight= pdf.internal.pageSize.height
+      // setTimeout(function () {
+      //
+      //   require ('../plugins/_jspdf.debug.js');
+      //   require ('../plugins/_html2pdf.js');
+      //   require ('../plugins/_html2canvas.js');
+      //   require ('../plugins/_jspdf.min.js');
+      //
+      //   // var pdf = new jsPDF('p', 'pt', 'a4');
+      //
+      //   // var canvas = document.getElementById('textarea');
+      //   // console.log(canvas);
+      //   // canvas.width = 72 * 8.5;
+      //   // canvas.height = 72 * 11;
+      //   // pdf = new jsPDF('p', 'pt','a4');
+      //   // console.log(pdf);
+      //   // pageHeight = pdf.internal.pageSize.height;
+      //   // console.log(pageHeight);
+      //   // var testo = document.getElementById('menu-completo');
+      //   // var pdfPart1 = document.getElementById('menu1');
+      //   // var pdfPart2 = document.getElementById('menu2');
+      //   // var pageHeight= pdf.internal.pageSize.height
+      //   //
+      //   // // y = 500 // Height position of new content
+      //   // // if (y >= pageHeight)
+      //   // // {
+      //   // //   pdf.addPage();
+      //   // //   y = 0 // Restart height position
+      //   // // }
+      //   // // html2pdf(testo, pdf, function(pdf){
+      //   // //   var iframe = document.createElement('iframe');
+      //   // //   iframe.setAttribute('style','position:absolute;right:0; top:0; bottom:0; height:100%; width:500px');
+      //   // //   testo.appendChild(iframe);
+      //   // //   iframe.src = pdf.output('datauristring');
+	    //   // //  });
+      //   // pdf.fromHTML( testo ,function() {
+      //   //     // pdf.output('datauri');
+      //   //     console.log(pdf, 'inside function fromHTML');
+      //   //      pdf.output('web.pdf');
+      //   // });
+      //   var menu = document.getElementById('menu-completo');
+      //   var pdf = new jsPDF('p', 'pt', 'a4');
+      //   var page1 = document.getElementById('menu1');
+      //   var page2 = document.getElementById('menu2');
+      //   var pages = [page1, page2];
+      //
+      //   pdf.output(pages, 'web.pdf');
+      //
+      //
+      //
+      //   // html2canvas(testo, canvas, {
+      //   //     onrendered: function(canvas) {
+      //   //         var iframe = document.createElement('iframe');
+      //   //         console.log("2");
+      //   //         iframe.setAttribute('style','position:absolute;right:0; top:0; bottom:0; height:100%; width:500px');
+      //   //         console.log("3");
+      //   //         testo.appendChild(iframe);
+      //   //         iframe.src = pdf.output('datauristring');
+      //   //        //var div = document.createElement('pre');
+      //   //        //div.innerText=pdf.output();
+      //   //        //document.body.appendChild(div);
+      //   //     }
+      //   // });
+      // }, 10);
 
-        // html2pdf(testo, pdf, function(pdf){
-        //   var iframe = document.createElement('iframe');
-        //   iframe.setAttribute('style','position:absolute;right:0; top:0; bottom:0; height:100%; width:500px');
-        //   testo.appendChild(iframe);
-        //   iframe.src = pdf.output('datauristring');
-	      //  });
-        pdf.fromHTML( #qualcosa# ,function() {
-            // pdf.output('datauri');
-             pdf.output('web.pdf');
-        });
-
-        // html2canvas(testo, canvas, {
-        //     onrendered: function(canvas) {
-        //         var iframe = document.createElement('iframe');
-        //         console.log("2");
-        //         iframe.setAttribute('style','position:absolute;right:0; top:0; bottom:0; height:100%; width:500px');
-        //         console.log("3");
-        //         testo.appendChild(iframe);
-        //         iframe.src = pdf.output('datauristring');
-        //        //var div = document.createElement('pre');
-        //        //div.innerText=pdf.output();
-        //        //document.body.appendChild(div);
-        //     }
-        // });
-      }, 10);
-
-
-  } //function event onClick
-
-//   'click #generateMenu': function (e, tmpl) {
-//     e.preventDefault();
-//
-//     Meteor.call('createPDF', function (err, res) {
-//         if (err) {
-//             console.error(err);
-//         }
-//         console.log(res);
-//             zip.file("Hello.txt", "Hello World\n");
-//             var img = zip.folder("images");
-//             img.file("google.pdf", res, {base64: true});
-//             var content = zip.generate({type: "blob"});
-//             saveAs(content, "case.zip");
-//     });
-// }
+  }
 
 });

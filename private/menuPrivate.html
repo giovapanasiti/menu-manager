@@ -1,0 +1,54 @@
+<html lang="en">
+<head>
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function categories(){
+        return Category.find({}, {sort: {categoryOrder: 1}});
+    }
+  </script>
+  <div id="menu-completo">
+    <div class="container-fluid" style="width: 210mm ; height: 297mm; background: yellow;" id="menu1">
+      <div class="row">
+        <div class="col-sm-6">
+          uno
+        </div>
+        <div class="col-sm-6"></div>
+      </div>
+    </div>
+
+    <div class="container-fluid" style="width: 210mm ; height: 297mm; background: green;" id="menu2">
+      <div class="row">
+        <div class="col-md-12">
+          {{#each categories _id}}
+            {{#each recipes }}
+            <div class="row">
+              <div class="col-md-6 text-center">
+                <h5>{{category.nameIt}}</h5>
+                <h3>{{nameIt}}</h3>
+              </div>
+              <div class="col-md-6 text-center">
+                <h5>{{category.nameFr}}</h5>
+                <h3>{{nameFr}}</h3>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6 text-center">
+                <h5>{{category.nameDe}}</h5>
+                <h3>{{nameDe}}</h3>
+              </div>
+              <div class="col-md-6 text-center">
+                <h5>{{category.nameEn}}</h5>
+                <h3>{{nameEn}}</h3>
+              </div>
+            </div>
+            <br><br>
+            {{/each}}
+          {{/each}}
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
