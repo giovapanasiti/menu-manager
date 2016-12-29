@@ -20,17 +20,7 @@ Template.menuPrivate.helpers({
 
 Meteor.methods({
   'render.pdf': function(menu){
-    // console.log('######################################### from server method')
-    // var doc = new PDFDocument({size: 'A4', margin: 50});
-    // // console.log(doc)
-    // console.log('######################################### from server method')
-    // SSR.compileTemplate('menuPrivate', Assets.getText('menuPrivate.html'));
-    // console.log('######################################### from server method')
-    // var html = SSR.render("menuPrivate");
-    // console.log('######################################### from server method')
-    // doc.fontSize(12);
-    // doc.text(html, 10, 30, {align: 'center', width: 200});
-    // console.log('######################################### from server method 2')
+
     var fs = Npm.require('fs');
     var fsPath = require('fs-path');
 
@@ -59,9 +49,7 @@ Meteor.methods({
         console.log('######################################### from server method 5')
     }).pipe(fs.createWriteStream('out.pdf'));
     console.log('######################################### from server method 6')
-    // Save it on myApp/public/pdf folder (or any place) with the Fibered sync methode:
-    // doc.writeSync(process.env.PWD + '/public/pdf/PDFKitExample.pdf');
-    // doc.writeSync(process.env.PWD + '/public/menu.pdf');
+
   },
   'look.pdf':function(){
   	var fstream = Npm.require('fs');
