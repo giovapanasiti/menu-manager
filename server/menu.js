@@ -49,7 +49,7 @@ Meteor.methods({
         console.log('######################################### from server method 5')
     }).pipe(fs.createWriteStream('out.pdf'));
     console.log('######################################### from server method 6')
-
+ 
   },
   'look.pdf':function(){
   	var fstream = Npm.require('fs');
