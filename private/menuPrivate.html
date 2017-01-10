@@ -4,12 +4,17 @@
 </head>
 <body>
    <script>
-    {
-      categories: function(){
+
+      function categories (){
         return Category.find({}, {sort: {categoryOrder: 1}});
     }
 
+    function recipes(){
+      var cId = Template.parentData(0)._id
+      return Recipe.find({"categoryId": cId, "isActive": true});
     }
+
+
   </script>
   <div id="menu-completo">
     <div class="container-fluid" style="width: 210mm ; height: 297mm; background: yellow;" id="menu1">
@@ -26,6 +31,9 @@
         <div class="col-md-12">
           <h2>CIAOOOO</h2>
           {{#each categories _id}}
+
+          {{_id}}
+          <hr>
             {{#each recipes }}
             <div class="row">
               <div class="col-md-6 text-center">
