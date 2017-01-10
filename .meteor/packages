@@ -40,7 +40,8 @@ new3rs:html2canvas
 pascoual:pdfkit
 jgdovin:html-pdf
 dfischer:phantomjs
-dburles:spacebars-tohtml
+dburles:spacebars-tohtml  # this is for Server Side Rendering alternative to meteorhacks:ssr 
 meteorhacks:ssr
 
 classcraft:meteor-wkhtmltopdf
+email
