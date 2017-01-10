@@ -3,12 +3,19 @@
   <title>Document</title>
 </head>
 <body>
-  
+   <script>
+    {
+      categories: function(){
+        return Category.find({}, {sort: {categoryOrder: 1}});
+    }
+
+    }
+  </script>
   <div id="menu-completo">
     <div class="container-fluid" style="width: 210mm ; height: 297mm; background: yellow;" id="menu1">
       <div class="row">
         <div class="col-sm-6">
-          uno
+          This is the menu first page
         </div>
         <div class="col-sm-6"></div>
       </div>
@@ -17,6 +24,7 @@
     <div class="container-fluid" style="width: 210mm ; height: 297mm; background: green;" id="menu2">
       <div class="row">
         <div class="col-md-12">
+          <h2>CIAOOOO</h2>
           {{#each categories _id}}
             {{#each recipes }}
             <div class="row">

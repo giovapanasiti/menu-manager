@@ -7,8 +7,8 @@ var html = fs.read( filePath );
 
 page.content = html;
 page.paperSize = {
-  format: 'Letter',
-  margin: '1cm'
+  format: 'a4',
+  margin: '0cm'
 };
 
 page.onLoadFinished = function( status ) {
