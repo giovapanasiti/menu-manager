@@ -1,6 +1,6 @@
-var page = Npm.require('webpage').create();
-var system = Npm.require('system');
-var fs = Npm.require('fs');
+var page = require('webpage').create();
+var system = require('system');
+var fs = require('fs');
 
 var filePath = system.args[1];
 var html = fs.read( filePath );
@@ -21,3 +21,6 @@ page.onLoadFinished = function( status ) {
     phantom.exit();
   }
 };
+
+
+
