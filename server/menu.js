@@ -36,6 +36,19 @@ Meteor.methods({
        
 
     }
+let fs = Npm.require('fs');
+
+    //function will check if a directory exists, and create it if it doesn't
+function checkDirectorySync(directory) {  
+  try {
+    fs.statSync(directory);
+  } catch(e) {
+    fs.mkdirSync(directory);
+  }
+}
+
+
+
     // let html = SSR.compileTemplate('menuPrivate', Assets.getText('menuPrivate.html'));
     let html = Spacebars.toHTML( dataContext, Assets.getText('menuPrivate.html') );
     console.log('######################################### 2')
@@ -43,15 +56,18 @@ Meteor.methods({
     let filePath;
     let filename = `menu.html`;
     console.log('######################################### 3 define file name');
+     
+    checkDirectorySync("/tmp/giovanni");  
     if ( process.env.NODE_ENV === 'development' ) {
-      filePath = '/tmp/' + filename;
+      filePath = '/tmp/giovanni/' + filename;
     } else {
       let path = Npm.require('path');
       filePath = path.join( process.env.TEMP_DIR, filename );
     }
-    console.log('######################################### 4 saved');
+
+    console.log('######################################### 4 saved', filePath);
     // write html to file
-    let fs = Npm.require('fs');
+    
     let writeFileSync = Meteor.wrapAsync( fs.writeFile );
     try {
       writeFileSync( filePath, html );

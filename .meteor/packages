@@ -45,3 +45,5 @@ meteorhacks:ssr
 
 classcraft:meteor-wkhtmltopdf
 email
+cfs:standard-packages
+cfs:filesystem
