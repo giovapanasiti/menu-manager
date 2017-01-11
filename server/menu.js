@@ -5,10 +5,36 @@ Meteor.methods({
       categories: function() {
         return Category.find({}, {sort: {categoryOrder: 1}});
       },
-      recipes: function(){
-        var cId = Template.parentData(0)._id
-        return Recipe.find({"categoryId": cId, "isActive": true});
-       }
+      categoryId: function(){
+        return Category.find({nameIt:'Antipasti'})._id
+      },
+      recipes1: function(categoryname){
+        var categoryId = Category.findOne({categoryOrder:1})._id;
+        // {categoryId:categoryId &and isActive:true}
+        return Recipe.find({ $and: [ { categoryId:categoryId },{ isActive:true }] });
+       },
+       recipes2: function(categoryname){
+        var categoryId = Category.findOne({categoryOrder:2})._id;
+        // {categoryId:categoryId &and isActive:true}
+        return Recipe.find({ $and: [ { categoryId:categoryId },{ isActive:true }] });
+       },
+       recipes3: function(categoryname){
+        var categoryId = Category.findOne({categoryOrder:3})._id;
+        // {categoryId:categoryId &and isActive:true}
+        return Recipe.find({ $and: [ { categoryId:categoryId },{ isActive:true }] });
+       },
+       recipes4: function(categoryname){
+        var categoryId = Category.findOne({categoryOrder:4})._id;
+        // {categoryId:categoryId &and isActive:true}
+        return Recipe.find({ $and: [ { categoryId:categoryId },{ isActive:true }] });
+       },
+       recipes5: function(categoryname){
+        var categoryId = Category.findOne({categoryOrder:5})._id;
+        // {categoryId:categoryId &and isActive:true}
+        return Recipe.find({ $and: [ { categoryId:categoryId },{ isActive:true }] });
+       },
+       
+
     }
     // let html = SSR.compileTemplate('menuPrivate', Assets.getText('menuPrivate.html'));
     let html = Spacebars.toHTML( dataContext, Assets.getText('menuPrivate.html') );

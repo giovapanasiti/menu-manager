@@ -1,23 +1,27 @@
 <html lang="en">
 <head>
   <title>Document</title>
+
+  <style>
+
+    * {
+      margin: 0;
+    }
+
+    body {
+      margin: 0;
+    }
+
+    html {
+      margin: 0;
+    }
+  
+  </style>
 </head>
 <body>
-   <script>
-
-      function categories (){
-        return Category.find({}, {sort: {categoryOrder: 1}});
-    }
-
-    function recipes(){
-      var cId = Template.parentData(0)._id
-      return Recipe.find({"categoryId": cId, "isActive": true});
-    }
-
-
-  </script>
+  
   <div id="menu-completo">
-    <div class="container-fluid" style="width: 210mm ; height: 297mm; background: yellow;" id="menu1">
+    <div class="container-fluid" style="width: 100% ; height: 100%; background: yellow;" id="menu1">
       <div class="row">
         <div class="col-sm-6">
           This is the menu first page
@@ -26,11 +30,10 @@
       </div>
     </div>
 
-    <div class="container-fluid" style="width: 210mm ; height: 297mm; background: green;" id="menu2">
+    <div class="container-fluid" style="width: 100% ; height: 100%; background: green;" id="menu2">
       <div class="row">
         <div class="col-md-12">
-          <h2>CIAOOOO</h2>
-          {{#each categories}}
+          <!--{{#each categories}}
 
           {{_id}} {{nameIt}}
           <hr>
@@ -57,6 +60,28 @@
             </div>
             <br><br>
             {{/each}}
+          {{/each}}-->
+
+          {{#each recipes1}}
+            {{nameIt}}
+          {{/each}}
+
+          <hr>
+
+          {{#each recipes2}}
+            {{nameIt}}
+          {{/each}}
+
+          <hr>
+
+          {{#each recipes3}}
+            {{nameIt}}
+          {{/each}}
+
+          <hr>
+
+          {{#each recipes4}}
+            {{nameIt}}
           {{/each}}
         </div>
       </div>
